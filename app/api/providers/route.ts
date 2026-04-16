@@ -19,7 +19,7 @@ export async function GET() {
     providers.push({
       name: "anthropic",
       available: true,
-      defaultModel: "claude-4-sonnet",
+      defaultModel: "claude-sonnet-4-6",
     });
   }
 

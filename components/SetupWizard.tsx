@@ -103,7 +103,7 @@ export default function SetupWizard({
               description:
                 "Maximum number of tokens in the LLM response.",
               inputType: "number",
-              defaultValue: 4096,
+              defaultValue: 16384,
               min: 100,
               max: 128000,
             },
