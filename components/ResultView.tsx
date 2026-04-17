@@ -1,10 +1,21 @@
+"use client";
+
+import { useState } from "react";
+import type { Model } from "survey-core";
 import type { ProcessResult } from "@/types";
+
+type DataTab = "response" | "extracted";
 
 interface ResultViewProps {
   result: ProcessResult;
+  surveyModel: Model | null;
+  surveyDataVersion: number;
 }
 
-export default function ResultView({ result }: ResultViewProps) {
+export default function ResultView({ result, surveyModel, surveyDataVersion }: ResultViewProps) {
+  const [activeDataTab, setActiveDataTab] = useState<DataTab>("response");
+  // surveyDataVersion is used to trigger re-render when survey data changes
+  void surveyDataVersion;
   const confidenceColor =
     result.overallConfidence >= 0.85
       ? "text-green-600 bg-green-50 border-green-200"
@@ -123,13 +134,34 @@ export default function ResultView({ result }: ResultViewProps) {
         </div>
       )}
 
-      {/* Extracted JSON */}
+      {/* Data Tabs */}
       <div className="bg-white rounded-lg border border-gray-200 p-6">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4">
-          Extracted Data
-        </h3>
+        <div className="flex space-x-1 border-b border-gray-200 mb-4">
+          <button
+            onClick={() => setActiveDataTab("response")}
+            className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+              activeDataTab === "response"
+                ? "border-blue-600 text-blue-600"
+                : "border-transparent text-gray-500 hover:text-gray-700"
+            }`}
+          >
+            Response Data
+          </button>
+          <button
+            onClick={() => setActiveDataTab("extracted")}
+            className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+              activeDataTab === "extracted"
+                ? "border-blue-600 text-blue-600"
+                : "border-transparent text-gray-500 hover:text-gray-700"
+            }`}
+          >
+            Extracted Data
+          </button>
+        </div>
         <pre className="bg-gray-900 text-green-400 p-4 rounded-lg text-sm overflow-x-auto max-h-96 overflow-y-auto">
-          {JSON.stringify(result.data, null, 2)}
+          {activeDataTab === "response"
+            ? JSON.stringify(surveyModel?.data ?? {}, null, 2)
+            : JSON.stringify(result.data, null, 2)}
         </pre>
       </div>
     </div>

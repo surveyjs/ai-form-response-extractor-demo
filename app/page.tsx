@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
+import { Model } from "survey-core";
 import type {
   ProviderInfo,
   ProcessResult,
@@ -26,6 +27,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<TabName>("setup");
   const [processingModel, setProcessingModel] = useState("");
   const [wizardKey, setWizardKey] = useState(0);
+  const [surveyDataVersion, setSurveyDataVersion] = useState(0);
 
   useEffect(() => {
     async function fetchProviders() {
@@ -98,6 +100,18 @@ export default function Home() {
     }
   }, []);
 
+  const surveyModel = useMemo(() => {
+    if (appState === "result" && result && setupData) {
+      const model = new Model(setupData.surveyJson);
+      model.data = result.data;
+      model.onValueChanged.add(() => {
+        setSurveyDataVersion((v) => v + 1);
+      });
+      return model;
+    }
+    return null;
+  }, [appState === "result" && result && setupData ? result : null]);
+
   const handleReset = useCallback(() => {
     setWizardKey((k) => k + 1);
     setAppState("setup");
@@ -105,6 +119,7 @@ export default function Home() {
     setError(null);
     setSetupData(null);
     setActiveTab("setup");
+    setSurveyDataVersion(0);
   }, []);
 
   if (appState === "loading") {
@@ -156,14 +171,13 @@ export default function Home() {
         )}
 
       {appState === "result" && activeTab === "result" && result && (
-        <ResultView result={result} />
+        <ResultView result={result} surveyModel={surveyModel} surveyDataVersion={surveyDataVersion} />
       )}
 
       {appState === "result" &&
         activeTab === "surveyForm" &&
-        result &&
-        setupData && (
-          <SurveyFormView surveyJson={setupData.surveyJson} data={result.data} />
+        surveyModel && (
+          <SurveyFormView model={surveyModel} />
         )}
 
       {appState === "error" && activeTab === "error" && (
