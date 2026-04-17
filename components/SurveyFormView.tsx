@@ -1,25 +1,16 @@
 "use client";
 
-import { useMemo } from "react";
 import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import "survey-core/defaultV2.min.css";
 
 interface SurveyFormViewProps {
-  surveyJson: Record<string, unknown>;
-  data: Record<string, unknown>;
+  model: Model;
 }
 
 export default function SurveyFormView({
-  surveyJson,
-  data,
+  model,
 }: SurveyFormViewProps) {
-  const survey = useMemo(() => {
-    const model = new Model(surveyJson);
-    model.data = data;
-    return model;
-  }, [surveyJson, data]);
-
   return (
     <div className="max-w-4xl mx-auto p-6">
       <div className="bg-white rounded-lg border border-gray-200 p-6 mb-4">
@@ -31,7 +22,7 @@ export default function SurveyFormView({
           data. You can review and edit the values.
         </p>
       </div>
-      <Survey model={survey} />
+      <Survey model={model} />
     </div>
   );
 }
