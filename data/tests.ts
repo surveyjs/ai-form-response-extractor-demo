@@ -1,16 +1,37 @@
+import { readdirSync, statSync } from "fs";
+import path from "path";
+
 export interface TestDataset {
   id: string;
   text: string;
-  images: string[];
-  json: string;
 }
 
-export const TEST_DATASETS: TestDataset[] = [
-  {
-    id: "test1",
-    text: "Synoptic Operative Report",
-    images: ["test1.jpg"],
-    json: "test1.json",
-  },
-  // More entries will be added here
-];
+const DATA_DIR = path.join(process.cwd(), "data");
+
+function dirNameToTitle(dirName: string): string {
+  return dirName
+    .replace(/[-_]/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+export function getTestDatasets(): TestDataset[] {
+  const entries = readdirSync(DATA_DIR);
+  const datasets: TestDataset[] = [];
+  for (const entry of entries) {
+    if (!/^[a-zA-Z0-9]/.test(entry)) continue;
+    const fullPath = path.join(DATA_DIR, entry);
+    if (statSync(fullPath).isDirectory()) {
+      const formPath = path.join(fullPath, "form.json");
+      try {
+        statSync(formPath);
+      } catch {
+        continue;
+      }
+      datasets.push({
+        id: entry,
+        text: dirNameToTitle(entry),
+      });
+    }
+  }
+  return datasets;
+}

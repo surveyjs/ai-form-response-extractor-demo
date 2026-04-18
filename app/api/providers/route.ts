@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { ProviderInfo } from "@/types";
-import { TEST_DATASETS } from "@/data/tests";
+import { getTestDatasets } from "@/data/tests";
 
 export const dynamic = "force-dynamic";
 
@@ -55,7 +55,7 @@ export async function GET() {
     !!process.env.ANTHROPIC_API_KEY ||
     ollamaReachable;
 
-  const testDatasets = TEST_DATASETS.map((d) => ({ id: d.id, text: d.text }));
+  const testDatasets = getTestDatasets().map((d) => ({ id: d.id, text: d.text }));
 
   return NextResponse.json({ providers, hasAvailable, testDatasets });
 }

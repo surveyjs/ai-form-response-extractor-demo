@@ -1,0 +1,204 @@
+{
+  "title": "Sample Completed Employment Application",
+  "description": "Customer Service Representative / Loan Officer / New Account Representative",
+  "pages": [
+    {
+      "name": "personal",
+      "elements": [
+        { "type": "text", "name": "position", "title": "1. Kind of position or job for which you are applying", "defaultValue": "Customer Service Representative" },
+        { "type": "text", "name": "otherPositions", "title": "2. Other positions for which you would like to be considered", "defaultValue": "Loan Officer or New Account Representative" },
+        { "type": "text", "name": "name", "title": "3. Name (Last, First, Middle)", "defaultValue": "Simmons, Susan J." },
+        { "type": "text", "name": "street", "title": "4. Street address", "defaultValue": "127 Blackrock Drive" },
+        { "type": "text", "name": "apt", "title": "5. Apartment number", "defaultValue": "#105" },
+        { "type": "text", "name": "city", "title": "6. City", "defaultValue": "Anytown" },
+        { "type": "text", "name": "state", "title": "7. State", "defaultValue": "Virginia" },
+        { "type": "text", "name": "zip", "title": "8. Zip", "defaultValue": "99999" },
+        { "type": "text", "name": "mailingAddress", "title": "9. If mailing address is different, provide address", "defaultValue": "P.O. Box 199, Anytown, VA 99999" },
+        { "type": "text", "name": "email", "title": "10. E-mail address", "defaultValue": "Susan123@aol.com" },
+        { "type": "text", "name": "phone", "title": "11. Telephone number", "defaultValue": "(999) 555-0010" },
+        { "type": "text", "name": "cell", "title": "12. Cell phone number", "defaultValue": "(999) 555-9919" },
+        {
+          "type": "radiogroup",
+          "name": "previouslyEmployed",
+          "title": "13. Have you ever been employed by this company?",
+          "choices": ["Yes", "No"],
+          "defaultValue": "No"
+        },
+        { "type": "text", "name": "salary", "title": "14. What starting salary would be acceptable to you? (Per hour)", "defaultValue": "Negotiable" },
+        {
+          "type": "panel",
+          "name": "availabilityDate",
+          "title": "15. Earliest date available to start work",
+          "elements": [
+            { "type": "text", "name": "startMonth", "title": "Month", "defaultValue": "March" },
+            { "type": "text", "name": "startDay", "title": "Day", "defaultValue": "1st" },
+            { "type": "text", "name": "startYear", "title": "Year", "defaultValue": "2011" }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "name": "availableFor",
+          "title": "16. Are you available for:",
+          "choices": ["Part-time work", "To relocate", "Overnight travel"],
+          "defaultValue": ["Part-time work", "Overnight travel"]
+        },
+        {
+          "type": "checkbox",
+          "name": "temporaryWork",
+          "title": "17. Would you consider temporary work of:",
+          "choices": ["Less than 3 months", "3 - 6 months", "9 - 12 months"],
+          "defaultValue": ["9 - 12 months"]
+        },
+        { "type": "text", "name": "startTime", "title": "18. Preferred start time", "defaultValue": "8 a.m." },
+        { "type": "text", "name": "military", "title": "19. Military experience", "defaultValue": "No" }
+      ]
+    },
+    {
+      "name": "experience",
+      "elements": [
+        {
+          "type": "paneldynamic",
+          "name": "workHistory",
+          "title": "20. Experience (Begin with current or most recent job)",
+          "templateElements": [
+            { "type": "text", "name": "employer", "title": "Name of employer" },
+            { "type": "text", "name": "supervisor", "title": "Immediate supervisor" },
+            { "type": "text", "name": "address", "title": "Address of employer" },
+            { "type": "text", "name": "phone", "title": "Telephone number" },
+            { "type": "text", "name": "cityStateZip", "title": "City, State, Zip" },
+            { "type": "text", "name": "businessType", "title": "Type of business" },
+            { "type": "text", "name": "jobTitle", "title": "Your job title" },
+            {
+              "type": "panel",
+              "name": "dates",
+              "title": "Dates of employment",
+              "elements": [
+                { "type": "text", "name": "fromMonth", "title": "From Month" },
+                { "type": "text", "name": "fromYear", "title": "Year" },
+                { "type": "text", "name": "toMonth", "title": "To Month" },
+                { "type": "text", "name": "toYear", "title": "Year" }
+              ]
+            },
+            { "type": "text", "name": "reasonLeaving", "title": "Reason for leaving" },
+            { "type": "text", "name": "beginningWage", "title": "Beginning wage ($ per hour)" },
+            { "type": "text", "name": "endingWage", "title": "Ending wage ($ per hour)" },
+            { "type": "comment", "name": "duties", "title": "Duties (be specific)" },
+            { "type": "comment", "name": "training", "title": "Special training received" }
+          ],
+          "minPanelCount": 1,
+          "maxPanelCount": 10,
+          "defaultValue": [
+            {
+              "employer": "Henry Construction",
+              "supervisor": "John Henry",
+              "address": "916 Main Street",
+              "phone": "(999) 555-6565",
+              "cityStateZip": "Anytown, Virginia 99999",
+              "businessType": "Home Remodeling",
+              "jobTitle": "Secretary/Bookkeeper",
+              "dates": { "fromMonth": "September", "fromYear": "2006", "toMonth": "Present", "toYear": "" },
+              "reasonLeaving": "Employer retiring",
+              "beginningWage": "14.50",
+              "endingWage": "18.50",
+              "duties": "Answer telephone. Schedule appointments. General correspondence. Keep company books using computer. Make bank deposits.",
+              "training": "One week course at Community College on Accounting software."
+            },
+            {
+              "employer": "Home Town National Bank",
+              "supervisor": "Bill Smith",
+              "address": "19 South Street",
+              "phone": "(999) 555-1000",
+              "cityStateZip": "Anytown, Virginia 99999",
+              "businessType": "Full service bank",
+              "jobTitle": "Teller",
+              "dates": { "fromMonth": "June", "fromYear": "2002", "toMonth": "September", "toYear": "2005" },
+              "reasonLeaving": "Return to school to complete Associate Degree",
+              "beginningWage": "9.50",
+              "endingWage": "13.00",
+              "duties": "Served customers. Maintained record of transactions. Counted money. Responsible for ATM. Assisted loan officer.",
+              "training": "Course on how to service the ATM. Customer service class."
+            },
+            {
+              "employer": "Yourtown Department Store",
+              "supervisor": "Mary Jones",
+              "address": "2695 North Main Street",
+              "phone": "(999) 555-2005",
+              "cityStateZip": "Anytown, Virginia 99999",
+              "businessType": "Department Store",
+              "jobTitle": "Sales Clerk",
+              "dates": { "fromMonth": "July", "fromYear": "1996", "toMonth": "June", "toYear": "2000" },
+              "reasonLeaving": "To care for newborn child.",
+              "beginningWage": "6.50",
+              "endingWage": "8.50",
+              "duties": "Waited on customers. Stocked shelves. Labeled clothes. Operated cash register. Processed credit cards. Accepted returns.",
+              "training": "In store training on cash register."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "additional",
+      "elements": [
+        { "type": "comment", "name": "employmentGaps", "title": "21. Explain all gaps in your employment that were 3 months or greater", "defaultValue": "June 2000 – June 2002: See #30\nSept 2005 – Sept 2006: Full-time school" },
+        { "type": "comment", "name": "skills", "title": "22. List special qualifications and skills", "defaultValue": "Knowledgeable of several computer accounting programs. Proficient with computer applications like Excel, Word and Dreamweaver." },
+        { "type": "text", "name": "memberships", "title": "23. List professional association memberships", "defaultValue": "None" },
+        { "type": "text", "name": "licenses", "title": "24. List licenses or certifications", "defaultValue": "Virginia Driver's License - Expires April, 2012" },
+        { "type": "radiogroup", "name": "contactEmployer", "title": "25. If currently employed, may we contact your employer?", "choices": ["Yes", "No"], "defaultValue": "Yes" },
+        {
+          "type": "panel",
+          "name": "education",
+          "title": "26. Education",
+          "elements": [
+            { "type": "text", "name": "highestEducation", "title": "Highest level of education", "defaultValue": "Associate Degree" },
+            { "type": "text", "name": "highSchool", "title": "High school / City, State / Degree / Major", "defaultValue": "Anytown High School, Anytown, VA – Diploma – Business" },
+            { "type": "text", "name": "college", "title": "College / City, State / Degree / Major", "defaultValue": "State Community College, Southville, VA – A.A. – Business" },
+            { "type": "comment", "name": "otherTraining", "title": "Other training", "defaultValue": "One week course, \"Using the Smith Accounting System\"" }
+          ]
+        },
+        { "type": "text", "name": "honors", "title": "27. List honors, awards, etc.", "defaultValue": "President of Business Club in high school." },
+        {
+          "type": "matrixdynamic",
+          "name": "references",
+          "title": "28. References (3 persons not related to you)",
+          "columns": [
+            { "name": "name", "title": "Name", "cellType": "text" },
+            { "name": "address", "title": "Mailing Address", "cellType": "text" },
+            { "name": "phone", "title": "Telephone Number", "cellType": "text" }
+          ],
+          "defaultValue": [
+            { "name": "Mary Samuel", "address": "P.O. Box 19, North, VA 99998", "phone": "(999) 555-2626" },
+            { "name": "Rev. Martin Bolles", "address": "2620 Main Street, South, VA 99997", "phone": "(999) 555-2727" },
+            { "name": "Frank Gibbs", "address": "970 Smyth, Anytown, VA 99999", "phone": "(999) 555-6999" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "legal",
+      "elements": [
+        {
+          "type": "matrix",
+          "name": "legalQuestions",
+          "title": "29. Respond to the following questions",
+          "columns": [{ "name": "yes", "title": "Yes", "cellType": "checkbox" }, { "name": "no", "title": "No", "cellType": "checkbox" }],
+          "rows": [
+            { "value": "eligibleUS", "text": "a. Are you eligible to work in the U.S.?" },
+            { "value": "felony", "text": "b. Have you ever been convicted of a felony?" },
+            { "value": "drugCrime", "text": "c. Have you ever been convicted of a drug-related crime?" },
+            { "value": "driversLicense", "text": "d. Do you have a valid driver's license?" },
+            { "value": "relative", "text": "e. Do you have any blood relatives employed by this company?" }
+          ],
+          "defaultValue": { "eligibleUS": { "yes": true }, "felony": { "no": true }, "drugCrime": { "no": true }, "driversLicense": { "yes": true }, "relative": { "yes": true } }
+        },
+        { "type": "text", "name": "relativeName", "title": "If yes to e – Name of relative", "defaultValue": "Betty Wilson" },
+        { "type": "text", "name": "relation", "title": "Relation to you", "defaultValue": "Sister-in-law (see #30)" },
+        { "type": "comment", "name": "additionalInfo", "title": "30. Additional information", "defaultValue": "Item 21: Took care of sick child. Child is well now...\nItem 29: Betty Wilson works in the South Fork Branch office..." },
+        { "type": "comment", "name": "candidateStatement", "title": "31. Candidate statement", "defaultValue": "I am excited about the possibility of working in a bank again..." },
+        { "type": "text", "name": "signature", "title": "Applicant Signature", "defaultValue": "Susan Simmons" },
+        { "type": "text", "name": "date", "title": "Date", "defaultValue": "February 8, 2014" }
+      ]
+    }
+  ],
+  "showQuestionNumbers": "on"
+}
