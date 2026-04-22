@@ -1,0 +1,135 @@
+{
+  "title": "Permission Form",
+  "description": "Field trip / event permission slip (detach and return).",
+  "pages": [
+    {
+      "name": "permissionSlip",
+      "title": "Event details",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "tripDetails",
+          "elements": [
+            {
+              "type": "text",
+              "name": "eventName",
+              "title": "Event name"
+            },
+            {
+              "type": "text",
+              "name": "eventDate",
+              "startWithNewLine": false,
+              "title": "Date",
+              "inputType": "date"
+            },
+            {
+              "type": "text",
+              "name": "teacherName",
+              "title": "Teacher name"
+            },
+            {
+              "type": "comment",
+              "name": "location",
+              "startWithNewLine": false,
+              "title": "Location",
+              "rows": 2
+            },
+            {
+              "type": "text",
+              "name": "eventTime",
+              "title": "Time"
+            },
+            {
+              "type": "text",
+              "name": "cost",
+              "startWithNewLine": false,
+              "title": "Cost"
+            },
+            {
+              "type": "comment",
+              "name": "notes",
+              "title": "Notes",
+              "rows": 2
+            },
+            {
+              "type": "text",
+              "name": "returnSlipBy",
+              "title": "Please detach and return this permission slip by",
+              "titleLocation": "left",
+              "description": "Date or deadline for returning the slip.",
+              "inputType": "date"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "parentConsent",
+          "title": "Permission and payment (parent / guardian)",
+          "elements": [
+            {
+              "type": "text",
+              "name": "studentName",
+              "title": "I give permission for (student name)",
+              "description": "Student who may attend the event.",
+              "isRequired": true
+            },
+            {
+              "type": "text",
+              "name": "attendEventName",
+              "title": "To attend (event)",
+              "description": "Usually the same as Event name above."
+            },
+            {
+              "type": "text",
+              "name": "paymentEnclosed",
+              "title": "Enclosed is ($) to cover the cost of the trip"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "medicalEmergency",
+          "title": "Emergency medical permission",
+          "elements": [
+            {
+              "type": "text",
+              "name": "studentNameMedicalConsent",
+              "title": "I give my permission to receive emergency medical treatment for (student name)",
+              "isRequired": true
+            },
+            {
+              "type": "text",
+              "name": "emergencyContactName",
+              "title": "In case of emergency, please contact (name)"
+            },
+            {
+              "type": "text",
+              "name": "emergencyContactPhone",
+              "startWithNewLine": false,
+              "title": "At (phone number)"
+            }
+          ]
+        },
+        {
+          "type": "panel",
+          "name": "signatureBlock",
+          "title": "Signatures and printed information",
+          "elements": [
+            {
+              "type": "text",
+              "name": "signedParentGuardian",
+              "title": "Signed (Parent/Guardian)"
+            },
+            {
+              "type": "text",
+              "name": "parentGuardianPhone",
+              "startWithNewLine": false,
+              "title": "Parent/Guardian Phone"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "widthMode": "responsive"
+}
