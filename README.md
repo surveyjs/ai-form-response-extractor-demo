@@ -1,6 +1,6 @@
-# Hybrid Form AI Demo
+# AI Form Response Extractor Demo
 
-Interactive demo for the [`hybrid-form-ai`](https://github.com/surveyjs/hybrid-form-ai) npm package — extract structured data from scanned/photographed paper forms and digital PDFs using multimodal LLMs.
+Interactive demo for the [`ai-form-response-extractor`](https://github.com/surveyjs/ai-form-response-extractor) npm package — extract structured data from scanned/photographed paper forms and digital PDFs using multimodal LLMs.
 
 ## Features
 
@@ -66,12 +66,12 @@ Open [http://localhost:3000](http://localhost:3000).
 2. **Test Data** — Choose a built-in sample dataset or provide your own images and form definition.
 3. **Upload** — Drag & drop scanned form images or digital PDFs (PNG, JPG, TIFF, PDF, etc.), or use pre-loaded test files.
 4. **Define** — Paste the SurveyJS JSON definition that describes your form fields, or use the pre-loaded test definition.
-5. **Process** — The server calls `hybrid-form-ai` to extract structured data from the images.
+5. **Process** — The server calls `ai-form-response-extractor` to extract structured data from the images.
 6. **Review** — See extraction results with confidence scores and a pre-filled SurveyJS form.
 
 ### Digital PDF Note
 
-Digital PDF processing requires the optional `sharp` dependency used by `hybrid-form-ai` for PDF-to-image conversion.
+Digital PDF processing requires the optional `sharp` dependency used by `ai-form-response-extractor` for PDF-to-image conversion.
 If you see an error about `Digital PDF inputs require the optional "sharp" dependency to be installed`, install `sharp` in the runtime environment where this app executes.
 
 ## Project Structure
@@ -83,7 +83,7 @@ app/
   globals.css         – Tailwind CSS imports
   api/
     providers/route.ts – GET: detect available LLM providers
-    process/route.ts   – POST: run extraction via hybrid-form-ai
+    process/route.ts   – POST: run extraction via ai-form-response-extractor
     test-data/route.ts – GET: serve sample test images and JSON
 components/
   NoProviders.tsx     – Setup instructions when no providers found

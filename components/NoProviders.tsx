@@ -69,12 +69,12 @@ ANTHROPIC_API_KEY=sk-ant-your-anthropic-api-key-here`}
 
           <div className="border-t pt-6 text-center">
             <a
-              href="https://github.com/surveyjs/hybrid-form-ai"
+              href="https://github.com/surveyjs/ai-form-response-extractor"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 font-medium"
             >
-              View hybrid-form-ai on GitHub →
+              View ai-form-response-extractor on GitHub →
             </a>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createExtractor } from "hybrid-form-ai";
-import { openai, anthropic, ollama } from "hybrid-form-ai/providers";
+import { createExtractor } from "ai-form-response-extractor";
+import { openai, anthropic, ollama } from "ai-form-response-extractor/providers";
 
 export async function POST(request: NextRequest) {
   const startTime = Date.now();

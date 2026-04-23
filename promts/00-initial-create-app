@@ -1,9 +1,9 @@
 You are an expert Next.js + TypeScript + SurveyJS developer.
 
-Create a complete, production-ready interactive demo for the published npm package `hybrid-form-ai`.
+Create a complete, production-ready interactive demo for the published npm package `ai-form-response-extractor`.
 
 **Important Technical Constraints:**
-- `hybrid-form-ai` is a **Node.js-only** package and must be used only on the server.
+- `ai-form-response-extractor` is a **Node.js-only** package and must be used only on the server.
 - All calls to `createExtractor` and `extractFromImage` must happen in a Next.js API route.
 - LLM API keys are read from server environment variables (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`). The package does **not** accept keys as parameters.
 - Ollama requires no API key but needs the Ollama server to be running locally.
@@ -27,7 +27,7 @@ On app load, the server must determine which LLM providers are available:
   - Detailed instructions on how to configure keys in `.env.local`.
   - Example `.env.local` content for OpenAI and Anthropic.
   - Instructions for Ollama (install + `ollama serve` + pull a vision model).
-  - Link to the main `hybrid-form-ai` repository.
+  - Link to the main `ai-form-response-extractor` repository.
 - Do **not** render the wizard or SurveyJS form.
 
 **State 2: At least one provider available**
@@ -46,7 +46,7 @@ The app is a multi-step wizard:
      - Info text (not a field): "API Key is configured securely on the server"
      - Optional fields: temperature, max tokens, etc.
    - Each question must have a clear, helpful description.
-   - Survey title: "Hybrid Form AI Demo – Test Paper Form Extraction"
+   - Survey title: "AI Form Response Extractor Demo – Test Paper Form Extraction"
    - Survey description: "Configure your LLM provider, upload scanned form images, and provide a SurveyJS JSON definition to see intelligent extraction in action."
 
 2. **Image Upload Page (second page)**
@@ -87,7 +87,7 @@ Please generate the full project structure with all necessary files, including:
 - API route: `app/api/process/route.ts`
 - A helper route or logic for checking available providers
 - Components, types, and utilities
-- `package.json` with all dependencies (must include `openai`, `@anthropic-ai/sdk`, and `ollama-ai-provider` as direct dependencies alongside `hybrid-form-ai`)
+- `package.json` with all dependencies (must include `openai`, `@anthropic-ai/sdk`, and `ollama-ai-provider` as direct dependencies alongside `ai-form-response-extractor`)
 - `.env.example`
 
 Start by creating the complete Next.js project code.

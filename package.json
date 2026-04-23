@@ -1,5 +1,5 @@
 {
-  "name": "hybrid-form-ai-demo",
+  "name": "ai-form-response-extractor-demo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
-        "hybrid-form-ai": "file:C:\\survey.js\\Lib\\hybrid-form-ai\\dist",
+    "ai-form-response-extractor": "latest",
     "next": "^15.1.0",
     "ollama-ai-provider": "^1.2.0",
     "openai": "^6.0.0",

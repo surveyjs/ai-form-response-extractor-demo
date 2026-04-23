@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  serverExternalPackages: ["hybrid-form-ai"],
+  serverExternalPackages: ["ai-form-response-extractor"],
 };
 
 export default nextConfig;

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hybrid Form AI Demo",
+  title: "AI Form Response Extractor Demo",
   description:
-    "Test paper form extraction with hybrid-form-ai – configure your LLM provider, upload scanned forms, and see intelligent extraction in action.",
+    "Test paper form extraction with ai-form-response-extractor – configure your LLM provider, upload scanned forms, and see intelligent extraction in action.",
 };
 
 export default function RootLayout({
