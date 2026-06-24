@@ -120,3 +120,11 @@ To add your own datasets, create a subfolder in `data/` that contains a `form.js
 ## License
 
 [MIT](./LICENSE)
+
+## Related Resources
+
+- [AI Form Response Extractor by SurveyJS](https://github.com/surveyjs/ai-form-response-extractor)
+- [SurveyJS Website](https://surveyjs.io/)
+- [SurveyJS Documentation](https://surveyjs.io/documentation)
+- [SurveyJS Form Library Demos](https://surveyjs.io/form-library/examples/overview)
+- [What's New in SurveyJS](https://surveyjs.io/WhatsNew)
