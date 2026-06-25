@@ -55,6 +55,7 @@ export default function SetupWizard({
       showProgressBar: "top",
       progressBarType: "pages",
       completeText: "Process with AI",
+      widthMode: "responsive",
       pages: [
         {
           name: "setup",
