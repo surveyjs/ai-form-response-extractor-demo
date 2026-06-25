@@ -237,7 +237,7 @@ export default function SetupWizard({
   }, [providers, testDatasets]);
 
   return (
-    <div className="max-w-4xl mx-auto py-8 px-4">
+    <div>
       <Survey model={survey} />
     </div>
   );

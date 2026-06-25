@@ -28,7 +28,7 @@ export default function Navigation({
 
   return (
     <div className="bg-white border-b shadow-sm">
-      <div className="max-w-6xl mx-auto px-4">
+      <div>
         <div className="flex items-center justify-between">
           <nav className="flex space-x-1">
             {tabs.map((tab) => (
