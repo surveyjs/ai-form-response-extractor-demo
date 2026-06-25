@@ -40,9 +40,6 @@ export default function SetupWizard({
         (PROVIDER_LABELS[p.name] || p.name) + (p.warning ? " ⚠️" : ""),
       }));
 
-    const ollamaProvider = providers.find((p) => p.name === "ollama");
-    const ollamaWarning = ollamaProvider?.warning;
-
     const testDataChoices = [
       { value: "custom", text: "Custom - I will provide my own images/PDFs and JSON definition" },
       ...testDatasets.map((d) => ({ value: d.id, text: d.text })),
@@ -66,10 +63,7 @@ export default function SetupWizard({
               name: "provider",
               title: "Choose LLM Provider",
               description:
-                "Select the AI provider to use for form extraction.\n" +
-                (ollamaWarning
-                  ? `⚠️ ${ollamaWarning}`
-                  : ""),
+                "Select the AI provider to use for form extraction.",
               isRequired: true,
               choices: providerChoices,
             },
