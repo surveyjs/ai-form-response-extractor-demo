@@ -32,11 +32,13 @@ export default function SetupWizard({
   onCompleteRef.current = onComplete;
 
   const survey = useMemo(() => {
-    const providerChoices = providers.map((p) => ({
+    const providerChoices = providers
+      .filter((p) => p.name !== "ollama" || p.available)
+      .map((p) => ({
       value: p.name,
       text:
         (PROVIDER_LABELS[p.name] || p.name) + (p.warning ? " ⚠️" : ""),
-    }));
+      }));
 
     const ollamaProvider = providers.find((p) => p.name === "ollama");
     const ollamaWarning = ollamaProvider?.warning;
